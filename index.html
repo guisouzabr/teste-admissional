@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>SysCord - XY Inc</title>
+        <!-- Google Font -->
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+        <!-- CSS - CMIDIA -->
+        <link href="css/geral.css" rel="stylesheet" media="screen">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <header class="headerContent nHeader">
+            <nav class="navbarHeader navbar navbar-default">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <h1 class="logomarkHeader"><a class="navbar-brand" href="#"><img src="img/header/logo-hdr.png" alt="XY Inc."></a></h1>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="middleContent">
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="msHeader">
+                                    <h2>
+                                        Cadastrar novo ponto de interesse
+                                    </h2>
+                                </div>
+                                <label class="labelDesc" for="poiName">Insira abaixo o nome do ponto de interesse que deseja cadastrar</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Nome</span>
+                                    <input type="text" class="form-control" id="poiName">
+                                </div>
+                                <label class="labelDesc" for="poi-X-Y">Insira abaixo as coordenadas do ponto de interesse</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Coord. X</span>
+                                    <input type="number" class="form-control" id="poiX">
+                                    <span class="input-group-addon">Coord. Y</span>
+                                    <input type="number" class="form-control" id="poiY">
+                                    <span class="input-group-btn">
+                                    <button type="submit" id="cadastrar" class="btn btn-default nBtn"><span class="glyphicon glyphicon-barcode"></span> Cadastrar ponto de inter.</button>
+                                    </span>
+                                </div>
+                                <div class="msHeader">
+                                    <h2>
+                                        Buscar pontos de interesse próximos
+                                    </h2>
+                                </div>
+                                <label class="labelDesc" for="buscar">Insira abaixo as suas coordenadas para encontrar os pontos de interesses próximos</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Coord. X</span>
+                                    <input type="number" class="form-control" id="searchX">
+                                    <span class="input-group-addon">Coord. Y</span>
+                                    <input type="number" class="form-control" id="searchY">
+                                    <span class="input-group-addon">Dist. Máx.</span>
+                                    <input type="number" class="form-control" id="distM">
+                                    <span class="input-group-btn">
+                                    <button type="submit" id="buscar" class="btn btn-default nBtn"><span class="glyphicon glyphicon-search"></span> Buscar</button>
+                                    </span>
+                                </div>
+                                <div class="btn-group">
+                                    <button type="submit" id="listar" class="btn btn-lg btn-default nBtn fullBtn">Listar todos os POI's</button>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="msHeader">
+                                    <h2>
+                                        Pontos de interesse
+                                    </h2>
+                                </div>
+                                <div id="searchRes" class="contentView">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <footer class="footerContent">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <span>Thiago Carvalho Fuzaro</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script>
+      
+        var poiS = [
+            ["lanchonete", 27, 12],
+            ["Posto", 31, 18],
+            ["Joalheria", 15, 12],
+            ["floricultura", 19, 21],
+            ["Pub", 12, 8],
+            ["Supermercado", 23, 6],
+            ["Churrascaria", 28, 2],
+        ];
+  
+        var addPoi = function() {
+            var numeroX = document.getElementById("poiX").value;
+            var numeroY = document.getElementById("poiY").value;
+            var namePoi = document.getElementById("poiName").value;
+            if(numeroX == "" || numeroY == "" || namePoi == "" || parseInt(numeroX) < 0 || parseInt(numeroY) < 0  || parseInt(namePoi) < 0 || Number.isInteger(parseInt(numeroX)) == false || Number.isInteger(parseInt(numeroY)) == false){
+                document.getElementById("searchRes").innerHTML= '<div class="alert alert-warning" role="alert"><b>Atenção!</b> Os campos de coordenadas estão vazios ou o valor inserido é invalido.</div>';
+                return;               
+            } else {
+                poiS.push([namePoi, numeroX, numeroY]);
+            }
+        }
+  
+        var listPoi = function() {
+            var html = '';
+            for(var i = 0; i < poiS.length; i++){
+                var retorno = retornaDist(poiS[i][1], poiS[i][2]);
+                console.log(poiS[i][0]);
+                html = html + '<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 noSpace"><div class="resultBox"><table class="table table-hover"><thead><tr><th>' + poiS[i][0] + '</th></tr></thead><tr><td>Coordenada X: <b>' + poiS[i][1] + '</b></td></tr><tr><td>Coordenada Y: <b>' + poiS[i][2] + '</b></td></tr></table></div></div>';
+            }
+            document.getElementById("searchRes").innerHTML= html;
+        }
+  
+        var searchPoi = function() {
+            var cordX = document.getElementById("searchX").value;
+            var cordY = document.getElementById("searchY").value;
+            var dMax = document.getElementById("distM").value;
+            if(cordX == "" || cordY == "" || dMax == "" || parseInt(cordX) < 0 || parseInt(cordY) < 0  || parseInt(dMax) < 0 || Number.isInteger(parseInt(cordX)) == false || Number.isInteger(parseInt(cordY)) == false){
+                document.getElementById("searchRes").innerHTML= '<div class="alert alert-warning" role="alert"><b>Atenção!</b> Os campos de coordenadas estão vazios ou o valor inserido é invalido.</div>';
+                return;
+            } else {
+                var html = '';
+                for(var i = 0; i < poiS.length; i++){
+                    var retorno = retornaDist(poiS[i][1], poiS[i][2], parseInt(cordX), parseInt(cordY));
+                    if(retorno <= parseFloat(dMax)){
+                        console.log(poiS[i][0]);
+                        html = html + '<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 noSpace"><div class="resultBox"><table class="table table-hover"><thead><tr><th>' + poiS[i][0] + '</th></tr></thead><tr><td>Coordenada X: <b>' + poiS[i][1] + '</b></td></tr><tr><td>Coordenada Y: <b>' + poiS[i][2] + '</b></td></tr></table></div></div>';
+                    }
+                }
+                document.getElementById("searchRes").innerHTML= html;
+            }
+        }
+  
+        var retornaDist = function(xa,ya,xb,yb){
+            return Math.sqrt(Math.pow((xb - xa),2) + Math.pow((yb - ya),2));
+        }
+  
+        var btnVerificar = document.getElementById("cadastrar");
+        btnVerificar.onclick = addPoi;
+
+        var btnListar = document.getElementById("listar");
+        btnListar.onclick = listPoi;
+
+        var btnBuscar = document.getElementById("buscar");
+        btnBuscar.onclick = searchPoi;
+        
+    </script> 
+	</body>
+</html>

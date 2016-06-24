@@ -1,0 +1,311 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* -----------------------------------*/
+/* ---------->>> Índice <<<-----------*/
+/* -----------------------------------*/
+/* >>> Índice ------------------------*/
+/* >>> Default -----------------------*/
+/* >>> Global ------------------------*/
+/* >>> - Cabeçalho da página ---------*/
+/* >>> - Estrutura da página ---------*/
+/* >>> - Rodapé da Página ------------*/
+/* >>> Device CSS --------------------*/
+/* >>> - Cabeçalho da página ---------*/
+/* >>> - Estrutura da página ---------*/
+/* >>> - Rodapé da Página ------------*/
+/* -----------------------------------*/
+
+
+/* -----------------------------------*/
+/* --------->>> Default <<<-----------*/
+/* -----------------------------------*/
+
+body {
+	background-color: #FAD089 !important;
+    font-family: 'Roboto Condensed', sans-serif !important;
+}
+
+.headerContent, .middleContent, .footerContent {
+	width:100%;
+	float:left;
+	position:relative;	
+}
+
+img {
+    width: 100%;
+}
+
+/* -----------------------------------*/
+/* ---------->>> Global <<<-----------*/
+/* -----------------------------------*/
+
+/* -----------------------------------*/
+/* ---->>> Cabeçalho da página <<<----*/
+/* -----------------------------------*/
+
+.navbarHeader {
+    border: medium none !important;
+    border-radius: 0px !important;
+    box-shadow: none !important;
+    margin-bottom: 0 !important;
+    background: none !important;
+}
+
+.nHeader {
+    background-color: #F5634A;
+    box-shadow: 0px -5px 20px 0px black;
+    margin-bottom: 25px;
+}
+
+.navbar-brand {
+    padding: 10px 15px !important;   
+}
+
+.logomarkHeader {
+    padding: 0;
+    width: 100%;
+    max-width: 289px;
+    margin: 0 auto;
+}
+
+/* -----------------------------------*/
+/* ---->>> Estrutura da página <<<----*/
+/* -----------------------------------*/
+
+.msHeader {
+    width: 100%;
+    float: left;
+}
+
+.msHeader h2 {
+    color: #ED303C;
+}
+
+.form-control {
+    border-radius: 0 !important;
+    border: 1px solid #FF9C5B !important;
+}
+
+.input-group-addon {
+    color: #FFF !important;
+    background-color: #FF9C5B !important;
+    border: none !important;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.btn-group {
+    width: 100%;
+    float: left;
+    margin-bottom: 25px;
+}
+
+.labelDesc {
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.nBtn {
+    background: none !important;
+    background-color: #F5634A !important;
+    color: #FFF !important;
+    text-shadow: none !important;
+    font-weight: normal;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+.nBtn span {
+    margin-right: 5px;   
+}
+
+.fullBtn {
+    width: 100%;
+    float: left;
+    text-transform: uppercase;
+}
+
+.contentView {
+    width: 100%;
+    float: left;
+    margin-top: 25px;
+}
+
+.contentView .noSpace {
+    padding: 0;
+    padding-right: 8px;
+}
+
+.resultBox {
+    background-color: #FF9C5B;
+    padding: 0px;
+    margin-bottom: 8px;
+    border: 1px solid #F5634A;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    border-top: 1px solid #F5634A !important;
+}
+
+.table>thead>tr>th {
+    border: none !important;
+    text-transform: uppercase;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.table-hover>tbody>tr:hover {
+    background-color: #F5634A !important;
+    color: #FFF !important;
+}
+
+.table>tbody>tr>td {
+    color: #FFF !important;
+    text-align: center;
+}
+
+.alert-warning {
+    border-radius: 0 !important;
+}
+
+.alineForm {
+    display: inherit;
+}
+
+/* -----------------------------------*/
+/* ------>>> Rodapé da Página <<<-----*/
+/* -----------------------------------*/
+
+footer.footerContent {
+    position: absolute !important;
+    bottom: 0;
+    background-color: #F5634A;
+    color: #FFF;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* ----->>> Extra pequenos aparelhos ( telefones, menos de 768px ) <<<-----*/
+@media (max-width:767px) {
+
+/* -----------------------------------*/
+/* ---->>> Cabeçalho da página <<<----*/
+/* -----------------------------------*/
+
+
+
+/* -----------------------------------*/
+/* ---->>> Estrutura da página <<<----*/
+/* -----------------------------------*/
+
+.input-group {
+    display: inline !important;
+}
+
+.input-group-addon {
+    border-radius: 0 !important;   
+}
+    
+.form-control {
+    margin-bottom: 15px !important;   
+    text-align: center;
+}
+    
+.nBtn {
+    width: 100% !important;
+    float: left !important;
+}
+
+.fullBtn {
+    margin-top: 20px;   
+}
+    
+.contentView div {
+    padding: 0px;
+}
+
+/* -----------------------------------*/
+/* ------>>> Rodapé da Página <<<-----*/
+/* -----------------------------------*/
+
+footer.footerContent {
+    position: relative!important;
+}
+    
+}
+
+/* ----->>> Pequenos dispositivos ( tablets , 768px ou superior ) <<<-----*/
+@media (min-width:768px) and (max-width:991px) {
+	
+/* -----------------------------------*/
+/* ---->>> Cabeçalho da página <<<----*/
+/* -----------------------------------*/
+
+    
+
+/* -----------------------------------*/
+/* ---->>> Estrutura da página <<<----*/
+/* -----------------------------------*/
+
+    
+    
+/* -----------------------------------*/
+/* ------>>> Rodapé da Página <<<-----*/
+/* -----------------------------------*/
+
+footer.footerContent {
+    position: relative!important;
+}
+
+}
+
+/* ----->>> Dispositivos Médio ( desktops , 992px ou superior ) <<<-----*/
+@media (min-width:992px) and (max-width:1199px) {
+	
+/* -----------------------------------*/
+/* ---->>> Cabeçalho da página <<<----*/
+/* -----------------------------------*/
+
+
+
+/* -----------------------------------*/
+/* ---->>> Estrutura da página <<<----*/
+/* -----------------------------------*/
+
+
+
+/* -----------------------------------*/
+/* ------>>> Rodapé da Página <<<-----*/
+/* -----------------------------------*/
+
+
+
+}
+
+/* ----->>> Dispositivos Grandes ( Grandes desktops , 1200px ou superior ) <<<-----*/
+@media (min-width:1200px) {
+    
+/* -----------------------------------*/
+/* ---->>> Cabeçalho da página <<<----*/
+/* -----------------------------------*/
+
+
+
+/* -----------------------------------*/
+/* ---->>> Estrutura da página <<<----*/
+/* -----------------------------------*/
+
+
+
+/* -----------------------------------*/
+/* ------>>> Rodapé da Página <<<-----*/
+/* -----------------------------------*/
+
+
+    
+}
